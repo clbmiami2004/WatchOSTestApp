@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
+    var wcSession: WCSession!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
     }
 
 
