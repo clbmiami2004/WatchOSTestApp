@@ -3,7 +3,7 @@
 //  WatchOSTestApp
 //
 //  Created by Christian Lorenzo on 9/27/22.
-//
+//  https://www.youtube.com/watch?v=ynJRLHsRu0U
 
 import UIKit
 import WatchConnectivity
@@ -27,15 +27,15 @@ class ViewController: UIViewController, WCSessionDelegate {
     //WCSession functions:
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        <#code#>
+        //
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
-        <#code#>
+        //
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        <#code#>
+        //
     }
     
     @IBAction func messageButtonTapped(_ sender: UIButton) {
