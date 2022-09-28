@@ -11,7 +11,7 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
-
+    
     var wcSession: WCSession!
     
     override func awake(withContext context: Any?) {
@@ -27,6 +27,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+    }
+    
+    //WCSession Delegate functions:
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        <#code#>
     }
 
 }

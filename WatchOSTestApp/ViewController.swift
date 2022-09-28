@@ -9,8 +9,11 @@ import UIKit
 import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
-
+    
     var wcSession: WCSession!
+    
+    //Outlets:
+    @IBOutlet weak var messageTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,17 @@ class ViewController: UIViewController, WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         <#code#>
     }
-
+    
+    @IBAction func messageButtonTapped(_ sender: UIButton) {
+        
+        guard let myMessage = messageTextField.text else {
+            return
+        }
+        
+        let message = ["messageToWatch": myMessage]
+        
+        wcSession.sendMessage(message, replyHandler: nil, errorHandler: {error in
+            print("There was an error when sending the message: \(error.localizedDescription)")
+        })
+    }
 }
-
