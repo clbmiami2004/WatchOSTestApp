@@ -14,6 +14,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var wcSession: WCSession!
     
+    //Outlets:
+    @IBOutlet weak var messageLabel: WKInterfaceLabel!
+    
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
     }
@@ -32,6 +35,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     //WCSession Delegate functions:
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         <#code#>
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("This is the message coming from the iPhone: \(message)")
+        messageLabel.setText(["messageToWatch"] as? String)
     }
 
 }
